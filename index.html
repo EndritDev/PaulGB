@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geburtstags-Geschenk für Fleischmann</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.google.com/specimen/Honk">
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
+</head>
+<body>
+    
+    <div class="startscreen screen" id="screen1">  
+        <h1>Hallo lieber Paul</h1>
+        <h1>Hier ist mein Geburtstagsgeschenk an dich</h1>
+    
+        <button class="startbtn btn" onclick="nextScreen()">Lasset die Spiele beginnen</button>
+    </div>
+    
+    <div class="none screen2" id="screen2">
+        <h2>Wie kannst du dein Alter mit Java printen?</h2>
+        <pre id="codeSnippet">
+            <code>
+    public class Geburtstag {
+        public static void main(String[] args) {
+            printAlter();
+        }
+    
+        static void printAlter(int deinAlter) {
+            // Vervollständige den Code hier
+        }
+    }
+            </code>
+        </pre>
+        <textarea id="codeInput" placeholder="Wie printest du dein Alter?"></textarea>
+        <button onclick="checkCode()" class="btn">Überprüfen</button>
+        <p id="resultMessage"></p>
+    </div>
+  
+    <div class="none screen2" id="screen3">
+        <div id="game-container">
+            <h2>Jetzt MAL dein Alter</h2>
+            <canvas id="drawingCanvas" width="100%" height="300"></canvas>
+            <br>
+            <button onclick="saveDrawing()" class="btn">fertigggg</button>
+        </div>
+    </div>
+
+    <div class="none screen2" id="screen4">
+        <div id="game-container">
+            <h2>DRÜCK AUF DEN KNOPF</h2>
+            <button id="gameButton" onclick="pressButton()" class="gamebtn">Drück mich!</button>
+        </div>
+    </div>
+
+    <div class="none screen2" id="screen5">
+        <div id="animation-container" style="display:none;">
+            <canvas id="confettiCanvas"></canvas>
+            <h2 id="birthdayMessage">ALLES GUTE ZUM GEBURTSTAG LIEBER PAUL</h2>
+            <image id="AlterImage"></image>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
