@@ -26,32 +26,33 @@ function checkCode() {
     }
 }
 
-// In der JavaScript-Datei (script.js)
+// In the JavaScript file (script.js)
 const canvas = document.getElementById("drawingCanvas");
 const context = canvas.getContext("2d");
 let isDrawing = false;
 
 canvas.width = window.innerWidth;
-canvas.height = 300; // Angepasste Höhe für das Malgebiet
+canvas.height = window.innerHeight;
 
 canvas.addEventListener("mousedown", startDrawing);
+canvas.addEventListener("touchstart", startDrawing);
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("touchmove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("touchend", stopDrawing);
 
 function startDrawing(e) {
     e.preventDefault();
-    e.stopPropagation();
     isDrawing = true;
     draw(e);
 }
 
 function draw(e) {
     e.preventDefault();
-    e.stopPropagation();
     if (!isDrawing) return;
 
-    const x = e.clientX - canvas.offsetLeft;
-    const y = e.clientY - canvas.offsetTop;
+    const x = e.clientX || e.touches[0].clientX;
+    const y = e.clientY || e.touches[0].clientY;
 
     context.lineWidth = 5;
     context.lineCap = "round";
