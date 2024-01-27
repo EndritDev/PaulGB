@@ -51,8 +51,8 @@ function draw(e) {
     e.preventDefault();
     if (!isDrawing) return;
 
-    const x = e.clientX || e.touches[0].clientX - canvas.offsetLeft;
-    const y = e.clientY || e.touches[0].clientY - canvas.offsetTop;
+    const x = e.clientX - canvas.offsetLeft || e.touches[0].clientX - canvas.offsetLeft;
+    const y = e.clientY - canvas.offsetTop || e.touches[0].clientY - canvas.offsetTop;
 
     context.lineWidth = 5;
     context.lineCap = "round";
