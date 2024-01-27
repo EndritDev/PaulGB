@@ -32,7 +32,7 @@ const context = canvas.getContext("2d");
 let isDrawing = false;
 
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = 300;
 
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("touchstart", startDrawing);
