@@ -40,12 +40,14 @@ canvas.addEventListener("touchend", stopDrawing);
 
 function startDrawing(e) {
     e.preventDefault();
+    e.stopPropagation();
     isDrawing = true;
     draw(e);
 }
 
 function draw(e) {
     e.preventDefault();
+    e.stopPropagation();
     if (!isDrawing) return;
 
     const x = e.clientX - canvas.offsetLeft;
